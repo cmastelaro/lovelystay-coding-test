@@ -1,17 +1,18 @@
 import { Command } from 'commander';
+import { showUsers } from '../functions/show_users';
 
 export function showUsersProfileCommand(program: Command) {
   program
     .command('show')
-    .description('Displays the users loaded and saved from our database')
+    .description('Show the users loaded and saved from our database')
     .option('-l, --location <string>', 'filtering by location')
     .action(async (options) => {
       const location = options.location ?? null;
       try {
-        // TODO: implement the async function to get the user profile from github repo
-        console.log('.....Displaying and filtering the users ...under construction');
+        // async function to show users previously stored into database
+        await showUsers(location);
       } catch (error: any) {
-        console.error('Error displaying users:', error.message);
+        console.error('Error trying to fetch users:', error.message);
       }
     });
 }

@@ -9,7 +9,8 @@
     "commander": "^12.1.0",
     "db-migrate": "^0.11.14",
     "db-migrate-pg": "^1.5.2",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "pg-promise": "^11.6.0"
   },
   "devDependencies": {
     "ts-node": "^10.9.2"

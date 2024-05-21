@@ -4,7 +4,8 @@ exports.up = function(db, callback) {
   const query = `
     CREATE TABLE users (
       id SERIAL PRIMARY KEY,
-      name VARCHAR(255) NOT NULL UNIQUE,
+      username VARCHAR(255) NOT NULL UNIQUE,
+      name VARCHAR(255) NOT NULL,
       location VARCHAR(255) NOT NULL,
       created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
