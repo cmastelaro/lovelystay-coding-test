@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 import { showUsers } from '../functions/show_users';
 
-export function showUsersProfileCommand(program: Command) {
+export function showUsersCommand(program: Command) {
   program
     .command('show')
     .description('Show the users loaded and saved from our database')

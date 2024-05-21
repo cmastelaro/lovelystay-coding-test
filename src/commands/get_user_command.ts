@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 import { getUser } from '../functions/get_github_user';
 
-export function getUserProfileCommand(program: Command) {
+export function getUserCommand(program: Command) {
   program
     .command('get')
     .description('Fetch a GitHub user profile')

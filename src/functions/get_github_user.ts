@@ -2,7 +2,7 @@ import { getGithubUser } from '../github/get_user';
 import { saveUser } from '../database/save_user';
 
 export async function getUser(
-    username: string
+  username: string
 ) {
   try {
     console.log('Fetching Github user data....');
@@ -13,10 +13,10 @@ export async function getUser(
     console.log(data);
 
     const result = await saveUser({
-        id: data.id,
-        username: data.login,
-        name: data.name ?? '',
-        location: data.location ?? ''
+      id: data.id,
+      username: data.login,
+      name: data.name ?? '',
+      location: data.location ?? ''
     })
 
     console.log(`User ${username} data saved successfully:`);

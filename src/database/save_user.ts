@@ -7,7 +7,9 @@ export interface User {
   location: string;
 }
 
-export async function saveUser({ username, name, location }: User): Promise<User> {
+export async function saveUser(
+  { username, name, location }: User): Promise<User> 
+{
   try {
     const query = `
     INSERT INTO users (username, name, location)

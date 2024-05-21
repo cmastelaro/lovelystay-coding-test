@@ -10,7 +10,7 @@ interface User {
 }
 
 interface QueryParams {
-  [key: string]: any;
+  [key: string]: string;
 }
 
 export async function fetchUsers(

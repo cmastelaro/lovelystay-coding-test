@@ -1,7 +1,7 @@
 {
   "name": "lovely-stay-challenge",
   "version": "1.0.0",
-  "description": "BackEnd Coding Test",
+  "description": "Backend Coding Test",
   "scripts": {},
   "keywords": [],
   "author": "Claudemir Mastelaro",
@@ -14,6 +14,9 @@
     "pg-promise": "^11.6.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint": "^8.57.0",
     "ts-node": "^10.9.2"
   }
 }
