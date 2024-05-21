@@ -1,0 +1,16 @@
+{
+  "name": "lovely-stay-challenge",
+  "version": "1.0.0",
+  "description": "BackEnd Coding Test",
+  "scripts": {},
+  "keywords": [],
+  "author": "Claudemir Mastelaro",
+  "dependencies": {
+    "db-migrate": "^0.11.14",
+    "db-migrate-pg": "^1.5.2",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
