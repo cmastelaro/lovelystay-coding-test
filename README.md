@@ -8,12 +8,13 @@ The bottom line here is to develop a command-line application using NodeJS + Typ
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Requirements](#requirements)
-  - [Installation](#installation)
-    - [Environment Setup](#environment-setup)
+  - [How to Use](#how-to-use)
+    - [Prerequisites](#prerequisites)
     - [Dependencies](#dependencies)
+    - [Environment Setup](#environment-setup)
     - [Database](#database)
     - [Build](#build)
-    - [Running](#running)
+  - [Running the Application](#running-the-application)
 
 ## Introduction
 
@@ -26,24 +27,58 @@ This project is part of the Lovelystay coding test for a back-end position.
 3. Improving on the previous requirement, it should also be possible to list users only from a given location (again, using a command-line option).
 4. Finally, the application should also query the programming languages this user seems to know/have repositories with and store them in the database as well. This should allow querying a user by location and/or programming languages.
 
-## Installation
+## How to Use
 
-### Environment Setup
-* Copy the .env-sample file to .env
-* Open .env and set the necessary environment variables
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/en/) (v12.x or later)
+- [npm](https://www.npmjs.com/get-npm) (usually comes with Node.js)
+- [PostgreSQL](https://www.postgresql.org/download/)
   
 ### Dependencies
+```sh
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+   ```
 * Run `npm install`
 
+### Environment Setup
+
+* Copy the .env-sample file to .env
+- Open .env and set the necessary environment variables
+
 ### Database
+
 * Ensure that you already have the postgres database created
-* Run `npx db-migrate up` / `db-migrate up`
+- Run `npx db-migrate up` / `db-migrate up`
 
 ### Build
+
 * Run `npx tsc` to generate the dist directory, which contains the output converted from TypeScript to JavaScript.
 
-### Running
-* Run `node dist/index.js`
 
 
-..... to be continue....
+
+## Running the Application
+
+* Showing the command-line arguments and options
+```
+node dist/index.js | node dist/index.js -h | node dist/index.js --help
+```
+
+* Getting a user profile from Github and storing into our database
+```
+node dist/index.js get username
+```
+
+* Listing all stored users
+```
+node dist/index.js show
+```
+
+* Listing all stored users filtering by location
+```
+node dist/index.js show -l location-name
+```

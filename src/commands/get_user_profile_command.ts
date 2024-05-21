@@ -1,4 +1,5 @@
 import { Command } from 'commander';
+import { getUser } from '../functions/get_github_user';
 
 export function getUserProfileCommand(program: Command) {
   program
@@ -7,8 +8,7 @@ export function getUserProfileCommand(program: Command) {
     .argument('<username>', 'username to be feched from github')
     .action(async (username: string) => {
       try {
-        // TODO: implement the async function to get the user profile from github repo
-        console.log('.....Fetching a github user profile...under construction');
+        await getUser(username);
       } catch (error: any) {
         console.error('Error fetching user profile:', error.message);
       }
