@@ -2,7 +2,9 @@
   "name": "lovely-stay-challenge",
   "version": "1.0.0",
   "description": "Backend Coding Test",
-  "scripts": {},
+  "scripts": {
+    "test": "ts-node --compiler-options '{\"module\":\"commonjs\"}' ./node_modules/jasmine/bin/jasmine.js"
+  },
   "keywords": [],
   "author": "Claudemir Mastelaro",
   "dependencies": {
@@ -14,9 +16,11 @@
     "pg-promise": "^11.6.0"
   },
   "devDependencies": {
+    "@types/jasmine": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^7.10.0",
     "@typescript-eslint/parser": "^7.10.0",
     "eslint": "^8.57.0",
+    "jasmine": "^5.1.0",
     "ts-node": "^10.9.2"
   }
 }

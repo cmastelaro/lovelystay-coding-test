@@ -1,6 +1,6 @@
 import { db } from './index';
 
-interface User {
+export interface User {
   id: number;
   username: string;
   name: string;

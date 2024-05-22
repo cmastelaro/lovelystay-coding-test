@@ -38,47 +38,51 @@ Make sure you have the following installed on your machine:
 - [PostgreSQL](https://www.postgresql.org/download/)
   
 ### Dependencies
+
 ```sh
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
    ```
-* Run `npm install`
+
+- Run `npm install`
 
 ### Environment Setup
 
-* Copy the .env-sample file to .env
+- Copy the .env-sample file to .env
 - Open .env and set the necessary environment variables
 
 ### Database
 
-* Ensure that you already have the postgres database created
+- Ensure that you already have the postgres database created
+
 - Run `npx db-migrate up` / `db-migrate up`
 
 ### Build
 
-* Run `npx tsc` to generate the dist directory, which contains the output converted from TypeScript to JavaScript.
-
-
-
+- Run `npx tsc` to generate the dist directory, which contains the output converted from TypeScript to JavaScript.
 
 ## Running the Application
 
-* Showing the command-line arguments and options
-```
+- Showing the command-line arguments and options
+
+```sh
 node dist/index.js | node dist/index.js -h | node dist/index.js --help
 ```
 
-* Getting a user profile from Github and storing into our database
-```
+- Getting a user profile from Github and storing into our database
+
+```sh
 node dist/index.js get username
 ```
 
-* Listing all stored users
-```
+- Listing all stored users
+
+```sh
 node dist/index.js show
 ```
 
-* Listing all stored users filtering by location
-```
+- Listing all stored users filtering by location
+
+```sh
 node dist/index.js show -l location-name
 ```
