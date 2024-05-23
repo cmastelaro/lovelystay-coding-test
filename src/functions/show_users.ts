@@ -1,10 +1,11 @@
 import { fetchUsers } from '../database/get_users';
 
 export async function showUsers(
-  location: string | null
+  location: string | null,
+  languages: string | null
 ) {
   try {
-    const users = await fetchUsers(location);
+    const users = await fetchUsers(location, languages);
     if (users.length === 0) {
       console.log("No results.");
     } else {

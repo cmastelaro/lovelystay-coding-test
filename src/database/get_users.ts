@@ -10,11 +10,12 @@ export interface User {
 }
 
 interface QueryParams {
-  [key: string]: string;
+  [key: string]: string | string[];
 }
 
 export async function fetchUsers(
-  location: string | null
+  location: string | null,
+  languages: string | null
 ): Promise<User[]>  {
   try {
     let query = `
@@ -25,15 +26,28 @@ export async function fetchUsers(
     const conditions: string[] = [];
     const queryParams: QueryParams = {};
 
+    if (languages) {
+      query += `
+        JOIN user_languages ul ON users.id = ul.user_id
+        JOIN programming_languages pl ON ul.language_id = pl.id
+      `;
+
+      const languageParam = languages.split(',').map(lang => lang.trim());
+      conditions.push(`pl.name ILIKE ANY($/language/)`);
+      queryParams['language'] = languageParam;
+    }
+
     if (location) {
       conditions.push(`users.location ILIKE $[location]`);
       queryParams['location'] = `%${location}%`;
-      // adding new condition when searching for location
+    }
+
+    if (conditions.length > 0) {
       query += ' WHERE ' + conditions.join(' AND ');
     }
 
-    const fetchedUsers: User[] = await db.any(query, queryParams);
-    return fetchedUsers;
+    const users: User[] = await db.any(query, queryParams);
+    return users;
   } catch (error: any) {
     throw new Error(error.message);
   }

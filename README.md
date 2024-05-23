@@ -92,7 +92,19 @@ node dist/index.js show
 - Listing all stored users filtering by location
 
 ```sh
-node dist/index.js show -l location-name
+node dist/index.js show --location location-name
+```
+
+- Listing all stored users filtering by languages
+
+```sh
+node dist/index.js show --languages <language1,language2,language3,...>
+```
+
+- Listing all stored users filtering by location and by languages
+
+```sh
+node dist/index.js show --location location-name --languages <language1,language2,language3,...>
 ```
 
 ## Running Tests
