@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Backend Coding Test",
   "scripts": {
-    "test": "ts-node --compiler-options '{\"module\":\"commonjs\"}' ./node_modules/jasmine/bin/jasmine.js"
+    "test": "ts-node node_modules/jasmine/bin/jasmine.js",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "Claudemir Mastelaro",

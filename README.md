@@ -12,10 +12,12 @@ The bottom line here is to develop a command-line application using NodeJS + Typ
     - [Prerequisites](#prerequisites)
     - [Dependencies](#dependencies)
     - [Environment Setup](#environment-setup)
+    - [Running the Docker Container](#running-the-docker-container)
     - [Database](#database)
     - [Build](#build)
   - [Running the Application](#running-the-application)
   - [Running Tests](#running-tests)
+  - [Running Lint](#running-lint)
   - [Final Considerations](#final-considerations)
     - [Commander](#commander)
     - [db-migrate](#db-migrate)
@@ -58,6 +60,14 @@ Make sure you have the following installed on your machine:
 
 - Copy the .env-sample file to .env
 - Open .env and set the necessary environment variables
+
+### Running the Docker Container
+
+To start the PostgreSQL container, run the following command in your project directory:
+
+```sh
+docker-compose up -d
+```
 
 ### Database
 
@@ -112,7 +122,15 @@ node dist/index.js show --location location-name --languages <language1,language
 - To run jasmine test suite
 
 ```sh
-npm test
+npm run test
+```
+
+## Running Lint
+
+- To run lint
+
+```sh
+npm run lint
 ```
 
 ## Final Considerations
