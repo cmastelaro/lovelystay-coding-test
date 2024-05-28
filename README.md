@@ -117,6 +117,12 @@ node dist/index.js show --languages <language1,language2,language3,...>
 node dist/index.js show --location location-name --languages <language1,language2,language3,...>
 ```
 
+- Listing all the languages a user has
+
+```sh
+node dist/index.js languages username
+```
+
 ## Running Tests
 
 - To run jasmine test suite
