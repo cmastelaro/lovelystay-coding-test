@@ -13,7 +13,6 @@ describe('getGithubUser function', () => {
     expect(userData).toBeDefined();
     expect(userData.name).toBe('John Doe');
     expect(userData.login).toBe('johndoe');
-    // Add more expectations as needed
   });
 
   it('should throw an error when an invalid username is provided', async () => {
@@ -26,7 +25,6 @@ describe('getGithubUser function', () => {
     const username = 'invalidusername';
     await expectAsync(getGithubUser(username)).toBeRejectedWithError(
       'Error fetching invalidusername profile: User not found');
-    // Add more expectations as needed
   });
 
   it('should re-throw the error if it is not an Axios error', async () => {
@@ -38,6 +36,5 @@ describe('getGithubUser function', () => {
     const username = 'anyusername';
     await expectAsync(getGithubUser(username)).toBeRejectedWithError(
       'Generic error');
-    // Add more expectations as needed
   });
 });
